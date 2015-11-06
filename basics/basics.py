@@ -26,6 +26,11 @@ def main():
     s = "Hello World"
     print(s[1:3])  # starts from index 0, everything from 1 till 3-1 ... outputs el
 
+#     python dictionaries
+    my_dict = {'key1': 10, 'key2': 'value2'}
+    print(my_dict)
+    print(my_dict['key1'].__class__)
+
 
 if __name__ == '__main__':
     main()
