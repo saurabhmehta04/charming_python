@@ -31,6 +31,44 @@ def main():
     print(my_dict)
     print(my_dict['key1'].__class__)
 
+#     creating a new empty dictionary
+    d = {}
+    print(d)
+    d['animal'] = 'Dog'
+    print(d)
+
+    ex = {'key1': {'key2': {'key3': 'value1'}}}
+    print(ex)
+    print(ex['key1']['key2']['key3'])  # getting the value1
+    print(ex.keys(), ex.values())
+
+#     returning tuples from the list
+    print(my_dict.items())
+
+    d = {'k1' : [1,2,3]}
+    print(d['k1'].__class__)  # prints list
+    print(d['k1'][0])  # prints 1
+
+#     tuples
+    t = (1, 2, 3, 3, 4, 5, 6)
+    print(t.__class__)
+    print(len(t))
+    print(t[-1])  # prints the last value
+    print("count :", t.count(3), " starting at index: ", t.index(3))
+
+    a, b = 2, 3
+    if a > b:
+        a, b = 4, 5
+
+    print(a, b)
+
+#     loops
+    l = [1, 2, 3, 4, 5]
+
+    for num in l:
+        if num % 2 != 0:    # checks for the odd numbers in the list
+            print(num, end=" ")
+
 
 if __name__ == '__main__':
     main()
