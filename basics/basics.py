@@ -26,12 +26,12 @@ def main():
     s = "Hello World"
     print(s[1:3])  # starts from index 0, everything from 1 till 3-1 ... outputs el
 
-#     python dictionaries
+    #     python dictionaries
     my_dict = {'key1': 10, 'key2': 'value2'}
     print(my_dict)
     print(my_dict['key1'].__class__)
 
-#     creating a new empty dictionary
+    #     creating a new empty dictionary
     d = {}
     print(d)
     d['animal'] = 'Dog'
@@ -42,14 +42,14 @@ def main():
     print(ex['key1']['key2']['key3'])  # getting the value1
     print(ex.keys(), ex.values())
 
-#     returning tuples from the list
+    #     returning tuples from the list
     print(my_dict.items())
 
-    d = {'k1' : [1,2,3]}
+    d = {'k1': [1, 2, 3]}
     print(d['k1'].__class__)  # prints list
     print(d['k1'][0])  # prints 1
 
-#     tuples
+    #     tuples
     t = (1, 2, 3, 3, 4, 5, 6)
     print(t.__class__)
     print(len(t))
@@ -62,13 +62,119 @@ def main():
 
     print(a, b)
 
-#     loops
+    #     loops
     l = [1, 2, 3, 4, 5]
 
     for num in l:
         if num % 2 != 0:    # checks for the odd numbers in the list
             print(num, end=" ")
+    print()
+    l.append(6)
+    print(l)
 
+
+    #   lambda, map(), reduce(), filter()
+
+    #   function are implemented as objects..check dir(function_name)
+    def caller(f):
+        f()
+
+    def hello():
+        print("Hello World")
+
+    caller(hello)
+
+    #     why function within functions, sorted, map, reduce, filter
+    print(sorted([1, 4, 2]))
+    print(sorted([1, -1, 0]))
+    # if we need to customize this using absolute value
+    print(abs(-2))
+    print("Sorting using high order functions: ", sorted([1, -2, 0], key=abs))
+
+    print(sorted(['foo', 'bar']))
+
+    #     maps
+    #     on the left hand side: we have a,b,c and takes in a function to make it x,y,z on the right hand side
+    map(str, [1, 2, 3])  # returns ['1', '2', '3']
+
+    #     perfect example of map()
+    def add_2(x):
+        return x*2
+
+    a = map(add_2, [1, 2, 3, 4, 5, 6])
+    print(*a)
+
+    count = 0
+    l = ['a', 'b', 'c']
+    for item in l:
+        print(count, end=" ")
+        print(item)
+        count += 1
+
+#     using enumerate
+    for count, item in enumerate(l):
+        print(count, " ", item)
+
+#     decorators
+    def func():
+        return 1
+
+    print(func())
+
+    s = "This is a global variable"
+
+    def func1():
+        print(locals())
+
+    print(globals().keys())
+
+#     function can be assigned to a variable
+    func2 = func
+
+#     decorators
+    def hello(name = "jose"):
+        print("The hello() function has been executed")
+
+        def greet():
+            return '\t this is inside the greet() function'
+
+        def welcome():
+            return '\t This is inside the welcome() function'
+
+        if name == "jose":
+            return greet
+        else:
+            return welcome
+
+        # print(greet())  ... unreachable code from here
+        # print(welcome())
+        # print("Now we are back inside the hello() function")
+
+    hello()
+    print('calling welcome')
+#     greet() and welcome() are not visible here due to scoping
+
+#     designing decorator
+    def new_decorator(func):
+        def wrap_func():
+            print("Code here, before executing the func")
+            func()
+            print("Code here will execute after the func")
+        return wrap_func()
+
+    # option1: passing a func to the decorator
+    # def func_needs_decorator():
+    #     print("This function needs decorator")
+    #
+    # func_needs_decorator = new_decorator(func_needs_decorator)
+    # print("\nDecorator: ", func_needs_decorator, '\n')
+
+    # option2: using "@"
+    print("********** DECORATOR **********")
+
+    @new_decorator
+    def func_needs_decorator():
+        print('Using @: This function needs a decorator')
 
 if __name__ == '__main__':
     main()
