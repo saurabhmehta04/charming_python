@@ -1,5 +1,6 @@
 __author__ = 'Falcon'
 # using python 3.5
+import re
 
 
 def main():
@@ -175,6 +176,31 @@ def main():
     @new_decorator
     def func_needs_decorator():
         print('Using @: This function needs a decorator')
+
+    test = 10
+
+    @new_decorator
+    def decorator_func():
+        test = 20
+        print("New Decorator function")
+    print(test)
+
+#     regular expressions
+    patterns = ['term1', 'term2']
+
+    str1 = 'This is test string, term1 is the culprit'
+
+    for pattern in patterns:
+        if re.search(pattern, str1):
+            print("Found ")
+        else:
+            print("Not found")
+
+    patt = 'term1'
+    str2 = 'this is term1 a string'
+    match = re.search(patt, str2)
+    print(type(match))
+
 
 if __name__ == '__main__':
     main()
