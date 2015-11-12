@@ -214,6 +214,13 @@ def main():
     # print("How old are you")
     # age = input()
 
+#     making an iterator
+    numbers = [1, 2, 3]
+    it = iter(numbers)
+    print(next(it))
+    print(next(it))
+    print(next(it))
+    # print(next(it))  #stop iteration exception
 
 if __name__ == '__main__':
     main()
