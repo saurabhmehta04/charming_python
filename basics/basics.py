@@ -1,6 +1,7 @@
 __author__ = 'Falcon'
 # using python 3.5
 import re
+from sys import argv
 
 
 def main():
@@ -199,7 +200,19 @@ def main():
     patt = 'term1'
     str2 = 'this is term1 a string'
     match = re.search(patt, str2)
-    print(type(match))
+    print(match.start())
+
+    test101 = "This is test"
+    # test102 = "This is test"
+    test102 = test101
+    print(test101 == test102)
+
+    print("This is test {x}".format(x="this is test"))
+    print("this is test %s" % "this is test")
+    print("This is test", "this is test")
+
+    # print("How old are you")
+    # age = input()
 
 
 if __name__ == '__main__':
