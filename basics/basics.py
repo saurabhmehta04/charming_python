@@ -1,8 +1,7 @@
 __author__ = 'Falcon'
 # using python 3.5
 import re
-from sys import argv
-
+import math
 
 def main():
     print("Hello World")
@@ -221,6 +220,40 @@ def main():
     print(next(it))
     print(next(it))
     # print(next(it))  #stop iteration exception
+    grades = {'Saurabh': '88', 'David': '20'}
+    for keys in grades:  # implements implicit iterator
+        print(keys)
+
+    def removeduplicates(word):  # using recursive call
+        if len(word) <= 1:
+            return word
+        elif word[0] == word[1]:
+            return removeduplicates(word[1:])
+        else:
+            return word[0] + removeduplicates(word[1:])
+
+    print(removeduplicates('aabbbbccccccdd'))
+    numbers = [1, 2, 3, 4]
+    numbersq = list(map(lambda x : x*x, numbers))
+    print(numbersq)
+
+    something = [x*x for x in range(10)]
+    print(something)
+
+    def even(number):
+        if number % 2 == 0:
+            return
+
+    # given two sides => calculate the hypotenuse  => x = sqrt(y^2 + z^2)
+    def hypotenuse(s1, s2):
+        def square(num):
+            return num*num
+        return math.sqrt(square(s1) + square(s2))
+    print(hypotenuse(2, 2))
+
+    print("Enter a number")
+    number = int(input())
+    print(math.sqrt(number))
 
 if __name__ == '__main__':
     main()
