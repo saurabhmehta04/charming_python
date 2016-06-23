@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5cdd941c-1e00-4d77-90d5-5f5ed8450019" name="gibson.rit.edu" url="http://people.rit.edu/ssm5110/">
+        <fileTransfer host="gibson.rit.edu" port="22" rootFolder="/home/ssm5110" accessType="SFTP" username="ssm5110">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
