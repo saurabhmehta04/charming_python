@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="gibson.rit.edu" uploadOnCheckin="5cdd941c-1e00-4d77-90d5-5f5ed8450019">
+  <component name="PublishConfigData" serverName="gibson.rit.edu">
     <serverData>
       <paths name="gibson.rit.edu">
         <serverdata>
@@ -10,6 +10,5 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="gibson.rit.edu" />
   </component>
 </project>
