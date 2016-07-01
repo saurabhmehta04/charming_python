@@ -2,8 +2,14 @@
 
 
 def main():
-    print("Check for auto deployment on RIT gibson server")
-    print("GitHub check")
+    print("Demo")
+
+
+def stringPermutation(string):
+    string = string.replace(" ", "")
+    reverse = string[::-1]
+    print(reverse == string)
 
 if __name__ == '__main__':
     main()
+    stringPermutation("nitin")
