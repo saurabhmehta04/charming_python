@@ -1,9 +1,23 @@
-# Python 3 refresher
+class Line(object):
+    def __init__(self, coor1, coor2):
+        # both the arguments are tuple
+        # self.coor1 = coor1
+        # self.coor2 = coor2
+        self.x1, self.y1 = coor1
+        self.x2, self.y2 = coor2
+
+    def distance(self):
+        pass
+
+    def slope(self):
+        # x1,y1 = self.coor1
+        # x2,y2 = self.coor2
+        return (self.y2 - self.y1) / (self.x2 - self.x1)
 
 
-def main():
-    print("Check for auto deployment on RIT gibson server")
-    print("GitHub check")
+coordinate1 = (3, 2)
+coordinate2 = (8, 10)
+li = Line(coordinate1, coordinate2)
 
-if __name__ == '__main__':
-    main()
+# li.distance() => 9.14
+print(li.slope())
