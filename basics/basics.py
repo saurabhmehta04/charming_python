@@ -7,7 +7,7 @@ class Line(object):
         self.x2, self.y2 = coor2
 
     def distance(self):
-        pass
+        return ((self.x2 - self.x1) ** 2 + (self.y2 - self.y1) ** 2) ** 0.5
 
     def slope(self):
         # x1,y1 = self.coor1
@@ -19,5 +19,5 @@ coordinate1 = (3, 2)
 coordinate2 = (8, 10)
 li = Line(coordinate1, coordinate2)
 
-# li.distance() => 9.14
+print(li.distance())
 print(li.slope())
