@@ -169,6 +169,43 @@ z = 3
 result = y + z
 print(result)
 
-pdb.set_trace()
-result2 = x + y
-print(result2)
+a1 = 10
+a2 = 20
+
+
+# practice of decorator
+# decorator takes in function and returns a decoratored version of the function
+def decorator_demo(func):
+    print("*********** Decorating the function ***********")
+    print(func(a1, a2))
+    print("*********** End of decorator function ***********")
+
+
+@decorator_demo
+def func_needs_decorator_stuff(a, b):
+    summation = a + b
+    return summation
+
+
+@decorator_demo
+def some_func_with_decorator(a, b):
+    print("Another func requiring decorator")
+
+
+# understanding decorators implicitly
+
+def dec_bar(some_func):
+    def inner_func():
+        ret = some_func()
+        return ret + 1
+
+    # call the inner function, execute it and return the result
+    return inner_func()
+
+
+@dec_bar
+def foo():
+    return 1
+
+    # decorated = dec_bar(foo)
+    # print(decorated)
