@@ -7,7 +7,6 @@
     - Product: object being built
     - does not rely on polymorphism
     - divide and conquer strategy
-
 '''
 
 
