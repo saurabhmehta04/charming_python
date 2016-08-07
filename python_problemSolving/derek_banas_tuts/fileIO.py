@@ -32,6 +32,41 @@ def fiboSequence(n):
         # b, a = temp, b
         print(fibo(i))
         i += 1
-
+    print("All done ")
 fiboSequence(6)
 # print(range(6))
+
+
+
+""" Read one line at a time using files """
+
+
+def readOneLine(line):
+    # function that prints the desired output from each line
+
+    arrOfWords = line.split()
+    arrLength = len(arrOfWords)
+
+    wordLength = []
+    for char in arrOfWords:
+        wordLength.append(len(char))
+
+    sum = 0
+    for num in wordLength:
+        sum += num
+
+    print("Number of words are : {}\nAvg length of words is : {:.1f}".format(arrLength,
+                                                                             sum / arrLength))
+
+
+with open("mydata.txt") as myFile:
+    lineNumber = 0
+    while True:
+        line = myFile.readline()
+
+        if not line:
+            break
+
+        lineNumber += 1
+        print("Line : {}".format(lineNumber))
+        readOneLine(line)
